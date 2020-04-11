@@ -50,6 +50,7 @@
 		1D09EE4917B12E80005E521C /* OWMAppDelegateOSX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWMAppDelegateOSX.m; sourceTree = "<group>"; };
 		1D09EE4C17B12E80005E521C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1D09EE5217B13089005E521C /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		2D4E92548D7D3521E3198B5D /* Pods-OpenWeatherMapAPI-OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapAPI-OSX.debug.xcconfig"; path = "Target Support Files/Pods-OpenWeatherMapAPI-OSX/Pods-OpenWeatherMapAPI-OSX.debug.xcconfig"; sourceTree = "<group>"; };
 		307CDF9A22E24CB689B4C5A5 /* libPods-OpenWeatherMapAPI-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenWeatherMapAPI-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		323D34BEA4DE412085DF960F /* Pods-OpenWeatherMapAPI-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapAPI-OSX.xcconfig"; path = "Pods/Pods-OpenWeatherMapAPI-OSX.xcconfig"; sourceTree = SOURCE_ROOT; };
 		64B909E8177B678E00C07E38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -74,7 +75,10 @@
 		64F1A804177F966500E8E247 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		64F1A806177F966700E8E247 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		6624A48C424F4109AC16186E /* Pods-OpenWeatherMapAPI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapAPI.xcconfig"; path = "Pods/Pods-OpenWeatherMapAPI.xcconfig"; sourceTree = SOURCE_ROOT; };
+		7F1061E21A25D7B5068B6A95 /* Pods-OpenWeatherMapAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapAPI.release.xcconfig"; path = "Target Support Files/Pods-OpenWeatherMapAPI/Pods-OpenWeatherMapAPI.release.xcconfig"; sourceTree = "<group>"; };
+		A30CEE0C753601369CCF5430 /* Pods-OpenWeatherMapAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapAPI.debug.xcconfig"; path = "Target Support Files/Pods-OpenWeatherMapAPI/Pods-OpenWeatherMapAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA6914043D74F95B6C7D2E9 /* libPods-OpenWeatherMapAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenWeatherMapAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60C602A7F1718410B975DBC /* Pods-OpenWeatherMapAPI-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapAPI-OSX.release.xcconfig"; path = "Target Support Files/Pods-OpenWeatherMapAPI-OSX/Pods-OpenWeatherMapAPI-OSX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				1589889C6C524CD1909E4D3F /* Pods.xcconfig */,
 				6624A48C424F4109AC16186E /* Pods-OpenWeatherMapAPI.xcconfig */,
 				323D34BEA4DE412085DF960F /* Pods-OpenWeatherMapAPI-OSX.xcconfig */,
+				D7FD7314577A8346C281808A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +226,18 @@
 			name = resources;
 			sourceTree = "<group>";
 		};
+		D7FD7314577A8346C281808A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A30CEE0C753601369CCF5430 /* Pods-OpenWeatherMapAPI.debug.xcconfig */,
+				7F1061E21A25D7B5068B6A95 /* Pods-OpenWeatherMapAPI.release.xcconfig */,
+				2D4E92548D7D3521E3198B5D /* Pods-OpenWeatherMapAPI-OSX.debug.xcconfig */,
+				F60C602A7F1718410B975DBC /* Pods-OpenWeatherMapAPI-OSX.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,11 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D09EE5017B12E80005E521C /* Build configuration list for PBXNativeTarget "OpenWeatherMapAPI-OSX" */;
 			buildPhases = (
+				4C595A3CE53C3772E1D1F7CB /* [CP] Check Pods Manifest.lock */,
 				5D3CA9228E7F46A6AAD44903 /* Check Pods Manifest.lock */,
 				1D09EE3117B12E7F005E521C /* Sources */,
 				1D09EE3217B12E7F005E521C /* Frameworks */,
 				1D09EE3317B12E7F005E521C /* Resources */,
-				7F6F4BD71B8A4EBC85EC9F83 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,11 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64DC45F0177380AC0039B58D /* Build configuration list for PBXNativeTarget "OpenWeatherMapAPI" */;
 			buildPhases = (
+				70CA08A1CA10CF478B31D5DB /* [CP] Check Pods Manifest.lock */,
 				E38831130625419FBED634A7 /* Check Pods Manifest.lock */,
 				64DC45C9177380AC0039B58D /* Sources */,
 				64DC45CA177380AC0039B58D /* Frameworks */,
 				64DC45CB177380AC0039B58D /* Resources */,
-				B919269A035241FCBA5E41A6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,6 +294,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 64DC45C4177380AC0039B58D;
@@ -318,6 +336,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C595A3CE53C3772E1D1F7CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenWeatherMapAPI-OSX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5D3CA9228E7F46A6AAD44903 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,34 +373,26 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7F6F4BD71B8A4EBC85EC9F83 /* Copy Pods Resources */ = {
+		70CA08A1CA10CF478B31D5DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenWeatherMapAPI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-OpenWeatherMapAPI-OSX-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B919269A035241FCBA5E41A6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-OpenWeatherMapAPI-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E38831130625419FBED634A7 /* Check Pods Manifest.lock */ = {
@@ -450,7 +482,7 @@
 /* Begin XCBuildConfiguration section */
 		1D09EE4E17B12E80005E521C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 323D34BEA4DE412085DF960F /* Pods-OpenWeatherMapAPI-OSX.xcconfig */;
+			baseConfigurationReference = 2D4E92548D7D3521E3198B5D /* Pods-OpenWeatherMapAPI-OSX.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -472,7 +504,7 @@
 		};
 		1D09EE4F17B12E80005E521C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 323D34BEA4DE412085DF960F /* Pods-OpenWeatherMapAPI-OSX.xcconfig */;
+			baseConfigurationReference = F60C602A7F1718410B975DBC /* Pods-OpenWeatherMapAPI-OSX.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -518,7 +550,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -542,7 +575,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -551,7 +585,7 @@
 		};
 		64DC45F1177380AC0039B58D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6624A48C424F4109AC16186E /* Pods-OpenWeatherMapAPI.xcconfig */;
+			baseConfigurationReference = A30CEE0C753601369CCF5430 /* Pods-OpenWeatherMapAPI.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenWeatherMapAPI/OpenWeatherMapAPI-Prefix.pch";
@@ -563,7 +597,7 @@
 		};
 		64DC45F2177380AC0039B58D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6624A48C424F4109AC16186E /* Pods-OpenWeatherMapAPI.xcconfig */;
+			baseConfigurationReference = 7F1061E21A25D7B5068B6A95 /* Pods-OpenWeatherMapAPI.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenWeatherMapAPI/OpenWeatherMapAPI-Prefix.pch";
