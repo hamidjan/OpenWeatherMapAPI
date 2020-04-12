@@ -1,11 +1,11 @@
 inhibit_all_warnings!
 
-target 'OpenWeatherMapAPI' do #, :exclusive => true do
+target 'OpenWeatherMapAPI' do
     platform :ios, '10.0'
-    pod 'AFNetworking'#, '~> 1.3.1'
+    pod 'AFNetworking'
 end
 
-target 'OpenWeatherMapAPI-OSX' do #, :exclusive => true do
-    platform :osx, '10.8'
-    pod 'AFNetworking'#, '~> 1.3.1'
+target 'OpenWeatherMapAPI-OSX' do
+    platform :osx, '10.14'
+    pod 'AFNetworking'
 end

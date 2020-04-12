@@ -149,17 +149,13 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager GET:[url absoluteString]
-      parameters:nil
-         success:^(NSURLSessionDataTask *task, id responseObject) {
-             // callback on the caller queue
-             NSDictionary *res = [self convertResult:responseObject];
-             callback(nil, res);
-         }
-         failure:^(NSURLSessionDataTask *task, NSError *error) {
-            callback(error, nil);
-         }
-     ];
+    [manager GET:[url absoluteString] parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // callback on the caller queue
+        NSDictionary *res = [self convertResult:responseObject];
+        callback(nil, res);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        callback(error, nil);
+    }];
 }
 
 #pragma mark - public api
