@@ -7,7 +7,7 @@
 //
 
 #import "OWMWeatherAPI.h"
-#import "AFJSONRequestOperation.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface OWMWeatherAPI () {
     NSString *_baseURL;
@@ -135,8 +135,6 @@
 - (void) callMethod:(NSString *) method withCallback:( void (^)( NSError* error, NSDictionary *result ) )callback
 {
     
-    NSOperationQueue *callerQueue = [NSOperationQueue currentQueue];
-    
     // build the lang paramter
     NSString *langString;
     if (_lang && _lang.length > 0) {
@@ -149,26 +147,19 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-
-        // callback on the caller queue
-        NSDictionary *res = [self convertResult:JSON];
-        [callerQueue addOperationWithBlock:^{
-            callback(nil, res);
-        }];
-
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-
-        // callback on the caller queue
-        [callerQueue addOperationWithBlock:^{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager GET:[url absoluteString]
+      parameters:nil
+         success:^(NSURLSessionDataTask *task, id responseObject) {
+             // callback on the caller queue
+             NSDictionary *res = [self convertResult:responseObject];
+             callback(nil, res);
+         }
+         failure:^(NSURLSessionDataTask *task, NSError *error) {
             callback(error, nil);
-        }];
-        
-    }];
-    [_weatherQueue addOperation:operation];
+         }
+     ];
 }
 
 #pragma mark - public api
